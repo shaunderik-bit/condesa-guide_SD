@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bienvenido | Condesa Welcome Guide</title>
+<style>
+:root{
+  --bg:#f3ede4;
+  --card:#eadfcd;
+  --card2:#f8f3eb;
+  --ink:#211a16;
+  --text:#6f5a48;
+  --gold:#b98a4a;
+  --line:#c9a976;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  line-height:1.6;
+}
+.page{
+  width:min(980px,100%);
+  margin:0 auto;
+  padding:42px 28px 70px;
+}
+.hero{
+  text-align:center;
+  padding:20px 0 32px;
+  border-bottom:2px solid var(--line);
+}
+h1{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:clamp(70px,13vw,118px);
+  line-height:.85;
+  font-weight:400;
+  color:var(--ink);
+  margin:0 0 24px;
+  letter-spacing:-3px;
+}
+.cdmx{
+  color:#a27b52;
+  letter-spacing:.75em;
+  font-weight:700;
+  font-size:18px;
+  margin-left:.75em;
+}
+.script{
+  font-family: Georgia, serif;
+  font-style:italic;
+  color:#8e7457;
+  font-size:clamp(28px,5vw,44px);
+  margin:26px 0 10px;
+}
+.address{
+  color:#a27b52;
+  letter-spacing:.22em;
+  font-weight:700;
+  font-size:17px;
+}
+.intro{
+  padding:34px 0 18px;
+  font-size:clamp(22px,4.2vw,31px);
+}
+.pills{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+.pill{
+  border:3px solid var(--line);
+  border-radius:999px;
+  padding:9px 18px;
+  font-weight:700;
+  font-size:clamp(18px,3.5vw,25px);
+  color:#7a6049;
+  background:#efe5d4;
+}
+.guide-box{
+  background:#eadfcd;
+  padding:28px;
+  margin:34px 0 44px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.label{
+  letter-spacing:.55em;
+  color:#a27b52;
+  font-size:15px;
+  font-weight:700;
+  margin:0 0 18px;
+}
+.navgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.navgrid a{
+  text-decoration:none;
+  color:#745d49;
+  background:#f8f3eb;
+  border:2px solid #d2b98d;
+  border-radius:10px;
+  padding:16px 14px;
+  font-size:20px;
+  font-weight:700;
+}
+.section{
+  padding:28px 0 38px;
+  border-top:2px solid #cfb485;
+}
+.heading{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:20px;
+}
+.icon{
+  width:58px;height:58px;border-radius:50%;
+  border:2px solid var(--line);
+  background:#eadfcd;
+  display:flex;align-items:center;justify-content:center;
+  font-size:27px;flex:0 0 auto;
+}
+h2{
+  font-family:Georgia, "Times New Roman", serif;
+  color:var(--ink);
+  font-weight:400;
+  font-size:clamp(32px,6vw,46px);
+  margin:0;
+}
+.rule{height:2px;background:#cfb485;margin:0 0 28px 75px}
+.card{
+  background:#eadfcd;
+  border:2px solid #d2b98d;
+  border-radius:14px;
+  padding:20px 24px;
+  margin:16px 0;
+  font-size:clamp(19px,3.7vw,25px);
+}
+.card h3{
+  margin:0 0 8px;
+  color:var(--ink);
+  font-size:clamp(21px,4vw,28px);
+}
+.kicker{
+  display:block;
+  letter-spacing:.5em;
+  color:#a27b52;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+.steps{
+  list-style:none;
+  counter-reset:item;
+  padding:0;
+  margin:0;
+}
+.steps li{
+  counter-increment:item;
+  margin:18px 0;
+  padding-left:64px;
+  position:relative;
+  font-size:clamp(20px,4vw,27px);
+}
+.steps li:before{
+  content:counter(item);
+  position:absolute;left:0;top:-2px;
+  width:38px;height:38px;border-radius:50%;
+  background:#eadfcd;border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:#a27b52;font-weight:700;
+}
+ul{padding-left:28px;margin:8px 0}
+li{margin:8px 0}
+.contacts .person{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:18px;
+  padding:18px 0;
+  border-bottom:2px solid #cfb485;
+}
+.avatar{
+  width:58px;height:58px;border-radius:50%;
+  border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#a27b52;background:#eadfcd;
+}
+a.phone{color:#6f5a48;text-decoration:none}
+footer{
+  text-align:center;
+  padding:26px 0 0;
+  border-top:2px solid #cfb485;
+  font-family:Georgia,serif;
+  font-style:italic;
+  color:#8e7457;
+  font-size:28px;
+}
+@media (max-width:650px){
+  .page{padding:30px 18px 52px}
+  .navgrid{grid-template-columns:1fr}
+  .rule{margin-left:0}
+  .card{padding:17px}
+  .address{letter-spacing:.13em}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <h1>bienvenido</h1>
+    <div class="cdmx">CDMX</div>
+    <div class="script">La Condesa</div>
+    <div class="address">Pachuca 75 #403 · La Condesa, CDMX</div>
+  </header>
+
+  <section class="intro">
+    <p>Welcome to Condesa. I’m glad you’re here. This guide contains everything you’ll need to enjoy your stay and feel at home in the apartment.</p>
+    <div class="pills">
+      <div class="pill">🚭 No smoking indoors</div>
+      <div class="pill">👟 Shoes off please</div>
+    </div>
+  </section>
+
+  <section class="guide-box">
+    <p class="label">IN THIS GUIDE</p>
+    <nav class="navgrid">
+      <a href="#building">🏢 Building access</a>
+      <a href="#internet">📶 Internet</a>
+      <a href="#lights">💡 Lights & remotes</a>
+      <a href="#bathrooms">🚿 Bathrooms</a>
+      <a href="#kitchen">🍳 Kitchen</a>
+      <a href="#storage">🧳 Storage & closets</a>
+      <a href="#trash">🗑️ Trash & recycling</a>
+      <a href="#services">🌿 Services</a>
+      <a href="#neighborhood">☕ Neighborhood</a>
+      <a href="#emergencies">🚨 Emergencies</a>
+    </nav>
+  </section>
+
+  <section id="building" class="section">
+    <div class="heading"><div class="icon">🏢</div><h2>Building Access</h2></div><div class="rule"></div>
+    <ol class="steps">
+      <li>Tap your key card on the sensor to the left of the main door.</li>
+      <li>You’ll hear a long beep — the magnet has released and the door is open.</li>
+    </ol>
+    <div class="card"><span class="kicker">Apartment Door</span>While pulling the door toward yourself, turn the key to the left. To close, use a little force.</div>
+  </section>
+
+  <section id="internet" class="section">
+    <div class="heading"><div class="icon">📶</div><h2>Internet</h2></div><div class="rule"></div>
+    <div class="card"><span class="kicker">Network</span><strong>shashanew</strong> <br><em>Please text me for the internet password.</em></div>
+    <div class="card">There are 2 routers. Your device may reconnect briefly as you move between rooms — totally normal.</div>
+  </section>
+
+  <section id="lights" class="section">
+    <div class="heading"><div class="icon">💡</div><h2>Lights & Remotes</h2></div><div class="rule"></div>
+    <ul class="card">
+      <li><strong>Living room mood lighting</strong> — Black remote on the middle pillar. Controls brick wall lights, balcony, and piano light.</li>
+      <li><strong>Projector blinds</strong> — Remote on the perimeter pillar.</li>
+      <li><strong>Entertainment</strong> — Projector, Apple TV & speaker remotes on the coral couch end table. Turn on left to right: projector → Apple TV → speaker.</li>
+      <li><strong>Office desk lighting</strong> — Mood light remote is to the left of the desk.</li>
+    </ul>
+  </section>
+
+  <section id="bathrooms" class="section">
+    <div class="heading"><div class="icon">🚿</div><h2>Bathrooms</h2></div><div class="rule"></div>
+    <div class="card"><span class="kicker">Hot Water</span>The hallway bathroom gets very hot — please be careful when adjusting the temperature.</div>
+    <div class="card"><span class="kicker">Sinks</span>Bathroom sinks do not have hot water.</div>
+    <div class="card"><span class="kicker">Toilet</span>Please only flush toilet paper — nothing else.</div>
+    <div class="card"><span class="kicker">Bathroom Door</span>If the bathroom door accidentally locks, use a butter knife, coin, or any flat object in the emergency release slot on the outside of the door.</div>
+  </section>
+
+  <section id="kitchen" class="section">
+    <div class="heading"><div class="icon">🍳</div><h2>Kitchen</h2></div><div class="rule"></div>
+    <div class="card"><span class="kicker">Drinking Water</span>The tap water is not recommended for drinking. Please use bottled or filtered water for drinking purposes.</div>
+    <div class="card"><span class="kicker">Stove & Oven</span>Gas-powered. Please make sure all burners are off and knobs are fully closed after use.</div>
+    <div class="card"><span class="kicker">Dishwasher</span>
+      <ol>
+        <li>Open the dishwasher door.</li>
+        <li>Press the power button on the left.</li>
+        <li>Press <strong>P</strong> until it reaches <strong>1:30</strong> for larger loads or <strong>40 minutes</strong> for smaller loads.</li>
+        <li>Close the door to begin.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="storage" class="section">
+    <div class="heading"><div class="icon">🧳</div><h2>Storage & Closets</h2></div><div class="rule"></div>
+    <div class="card"><span class="kicker">Primary Bedroom</span>Guests are welcome to use any empty closets, drawers, and storage areas in the primary bedroom.</div>
+    <div class="card"><span class="kicker">Guest Bedroom</span>A dedicated luggage-storage closet is available in the guest bedroom for suitcases and travel items.</div>
+  </section>
+
+  <section id="trash" class="section">
+    <div class="heading"><div class="icon">🗑️</div><h2>Trash & Recycling</h2></div><div class="rule"></div>
+    <div class="card">The apartment trash can is located in the laundry room.</div>
+    <div class="card">If the trash or recycling becomes full during your stay, please place bags in the designated collection bins located in the garage on the ground floor.</div>
+    <div class="card">If you’re unsure which bin to use, feel free to ask.</div>
+  </section>
+
+  <section id="extras" class="section">
+    <div class="heading"><div class="icon">📦</div><h2>Extras</h2></div><div class="rule"></div>
+    <div class="card"><span class="kicker">Towels & Sheets</span>Additional towels and bed linens are located in the guest bedroom closet.</div>
+    <div class="card"><span class="kicker">Fan, Heater & Iron</span>A fan, heater, and iron are available in the guest bedroom cabinet. Please unplug appliances when not in use.</div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="heading"><div class="icon">🌿</div><h2>Weekly Services</h2></div><div class="rule"></div>
+    <div class="card">
+      <h3>Plant Care — Miguel Angel</h3>
+      <span class="kicker">Every Wednesday · 2:00 – 3:30 PM</span>
+      Will ring the doorbell and will not enter without permission. You’re welcome to remain in the apartment during service. If you’re out, the doorman can let him in.
+    </div>
+    <div class="card">
+      <h3>Cleaning — Lupita</h3>
+      <span class="kicker">Every Wednesday · Time TBD</span>
+      Services include changing sheets, cleaning bathrooms, tidying the kitchen, and general apartment upkeep. She can also wash your clothes if you’d like. You’re welcome to remain in the apartment during service. If you’re out, the doorman can let her in.
+    </div>
+  </section>
+
+  <section id="neighborhood" class="section">
+    <div class="heading"><div class="icon">☕</div><h2>Neighborhood Favorites</h2></div><div class="rule"></div>
+    <div class="card"><h3>Cucurucho Café</h3>Immediately to the right of the building.</div>
+    <div class="card"><h3>OXXO</h3>To the right of the building on the corner of Juan Escutia and Pachuca.</div>
+    <div class="card"><h3>Walmart Express</h3>Approximately a 2-minute walk — one block away.</div>
+    <div class="card"><h3>Lardo Restaurant</h3>Approximately a 5-minute walk away.</div>
+  </section>
+
+  <section id="emergencies" class="section">
+    <div class="heading"><div class="icon">🚨</div><h2>Emergencies</h2></div><div class="rule"></div>
+    <div class="card">Call Shaun directly and notify Tomas the doorman. There is a fire blanket under the sink.</div>
+    <div class="contacts">
+      <div class="person"><div class="avatar">SD</div><div><strong>Shaun</strong><br>Host<br><a class="phone" href="tel:+16143067644">+1 614 306 7644</a></div></div>
+      <div class="person"><div class="avatar">T</div><div><strong>Tomas</strong><br>Building Doorman<br><a class="phone" href="tel:+525539318018">+52 55 3931 8018</a></div></div>
+      <div class="person"><div class="avatar">M</div><div><strong>Mariel</strong><br>Guest Assistance<br><a class="phone" href="tel:+525526890981">+52 55 2689 0981</a></div></div>
+    </div>
+  </section>
+
+  <footer>Thank you for choosing the apartment for your stay. Enjoy Condesa.</footer>
+</main>
+</body>
+</html>
